@@ -39,14 +39,12 @@ public class LogginLabTest {
         LogginLab lab = new LogginLab();
         lab.setThreshold(finalLimit);
 
-        
-        
         for (Integer i = 1; i <= finalLimit; i++) {
             if (lab.thresholdReached(i)) {
-                logger.log(Level.INFO, "Threshold not reached! It is "+i);
+                logger.log(Level.INFO, "Threshold finally reached!");
                 assertTrue(lab.thresholdReached(i));
             } else {
-                logger.log(Level.INFO, "Threshold finally reached!");
+                logger.log(Level.INFO, "Threshold not reached! It is "+i);
                 assertFalse(lab.thresholdReached(i));
             }
         }
